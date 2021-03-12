@@ -8,8 +8,8 @@ import org.springframework.http.HttpStatus;
 @Getter
 @Setter
 public class LinkTrackerException extends Exception {
-    private ErrorDTO errorDTO;
-    private HttpStatus status;
+    private final ErrorDTO errorDTO;
+    private final HttpStatus status;
 
     public LinkTrackerException(ErrorDTO errorDTO) {
         super(errorDTO.getDescription());

@@ -18,6 +18,7 @@ public class LinkTrackerController {
     private LinkTrackerService service;
 
     @PostMapping("/add")
+    @ResponseStatus(value = HttpStatus.OK)
     public ResponseDTO add(@RequestBody LinkDTO entry) throws InvalidURLException, AlreadyExistException {
         return service.addLink(entry);
     }
@@ -37,6 +38,7 @@ public class LinkTrackerController {
     }
 
     @PostMapping("/invalidate/{linkID}")
+    @ResponseStatus(HttpStatus.OK)
     public ResponseDTO invalidate(@PathVariable Integer linkID) throws InvalidIDException {
         return service.invalidateLink(linkID);
     }
